@@ -1,0 +1,391 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Images/ProtfoliJet_Logo.png">
+    <title>PortfolioJet</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <section class="Header">
+        <nav>
+            <a href="index.html">
+                <span></span>
+                <h1 >PortfolioJet</h1>
+            </a> 
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                  <li><a href="#contact-us">CONTACT US</a></li>
+                  <li><a href="#about-us">ABOUT US</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>   
+        </nav>
+        <div class="text-box">
+            <h1>Build Resume Fast and Confidently</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque tenetur exercitationem vero veritatis ad provident explicabo, voluptates earum voluptas, quia debitis illo similique placeat in vitae nostrum, cupiditate assumenda minima dolore? Consequatur blanditiis iste perspiciatis sapiente. Numquam quibusdam quo saepe quae aspernatur alias, dicta iste exercitationem deserunt deleniti fuga accusamus!
+            </p>
+            <a
+              href="#Form"
+              class="hero-btn"> Get Started </a
+            >
+        </div>
+    </section>
+    <section class="Form" id="Form">
+        <!-- MultiStep Form -->
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                        <h2 id="heading">Start building your Resume</h2>
+                        <p>Fill all mandatory fields to go to next step</p>
+                        <form id="msform" method="POST" action="/details" enctype="multipart/form-data">
+                            <!-- progressbar -->
+                            {% csrf_token %}
+                            <ul id="progressbar">
+                                <a href="#1"><li class="active" id="personalDetails"><strong>Personal Details</strong></li></a>
+                                <li id="education"><strong>Education</strong></li>
+                                <li id="languages"><strong>Languages</strong></li>
+                                <li id="careerObjective"><strong>Career Objective</strong></li>
+                                <li id="experience"><strong>Experience / Acomplishment</strong></li>
+                                <li id="skills"><strong>Skills</strong></li>
+                                <li id="interests"><strong>Interest and Hobbies</strong></li>
+                            </ul>
+                            <br> 
+                            <!-- fieldsets -->
+                            <fieldset id="1">
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Personal Details:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 1 - 7</h2>
+                                        </div>
+                                    </div> 
+                                        <label class="fieldlabels">Full Name: *</label> <input type="text" name="name" placeholder="John Wick" /> 
+                                        <label class="fieldlabels">Profession: *</label> <input type="text" name="prof" placeholder="Student" /> 
+                                        <label class="fieldlabels">Phone Number: *</label> <input type="tel" name="phone" placeholder="+91 7894561230" /> 
+                                        <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="johnwick@gmail.com" />
+                                        <label class="fieldlabels">Github: </label> <input type="text" name="git" placeholder="github.com/johnwick" />
+                                        <label class="fieldlabels">LinkedIn: </label> <input type="text" name="lid" placeholder="linkedin.com/in/johnwick" />
+                                        <label class="fieldlabels">Address: *</label> <input type="text" name="addr" placeholder="Bihar, India" />
+                                        <label class="fieldlabels">Upload Your Photo: *</label> <input type="file" name="pic" accept="image/*"> <label>
+                                </div> <input type="button" name="next" class="next action-button" value="Next" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Education:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 2 - 7</h2>
+                                        </div>
+                                    </div> 
+                                    <div class="add_e_input_fields">
+                                        <label class="fieldlabels">Course Name: *</label> <input type="text" name="cname[]"  placeholder="BTech"/> 
+                                        <label class="fieldlabels">University Name: *</label> <input type="text" name="uname[]"  placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate[]"  placeholder="2019" />
+                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="edate[]"  placeholder="2023" />
+                                        <button type="button" class="add_e_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var max_fields=10
+                                            var wrapper = $(".add_e_input_fields");
+                                            var add_button = $(".add_e_input_fields_button")
+                                            var x=1;
+                                            $(add_button).click(function(e){
+                                                e.preventDefault();
+                                                if (x<max_fields){
+                                                    x++;
+
+                                                    $(wrapper).append('<div class="add_e_input_fields"><label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech" /><label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" /><a href="#" class="add_e_input_fields_button"><i class="fa-solid fa-circle-plus"></i></a> <a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                }
+                                            });
+
+                                            $(wrapper).on("click",".remove_field",function(e){
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+                                        });
+                                    </script>
+                                </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Create Languages:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 3 - 7</h2>
+                                        </div>
+                                    </div> 
+                                    <div class="add_l_input_fields">
+                                        <label class="fieldlabels">Language: *</label> <input type="text" name="lang[]"> 
+                                        <label class="fieldlabels" for="slang">Language Level: *</label>
+                                        <select class="fieldlabels" name="slang[]" id="lang">
+                                            <option value="novice">Novice</option>
+                                            <option value="intermediate">Intermediate</option>
+                                            <option value="fluent">Fluent</option>
+                                        </select>
+                                        <button type="button" class="add_l_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var max_fields=10
+                                            var wrapper = $(".add_l_input_fields");
+                                            var add_button = $(".add_l_input_fields_button")
+                                            var x=1;
+                                            $(add_button).click(function(e){
+                                                e.preventDefault();
+                                                if (x<max_fields){
+                                                    x++;
+
+                                                    $(wrapper).append('<div class="add_l_input_fields"><label class="fieldlabels">Language: *</label> <input type="text" name="lang[]" /><label class="fieldlabels" for="slang">Language Level: *</label><select class="fieldlabels" name="slang" id="lang"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="fluent">Fluent</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                }
+                                            });
+                                            $(wrapper).on("click",".remove_field",function(e){
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+                                        });
+                                    </script>                                
+                                </div> 
+                                <input type="button" name="next" class="next action-button" value="Next" /> 
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Career Objective:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 4 - 7</h2>
+                                        </div>
+                                    </div> 
+                                    <label class="fieldlabels"></label> 
+                                    <textarea id="obj" name="careerobj" cols="30" rows="10"></textarea>
+                                    <button id="enhance" value="enhance">enhance</button>
+                                    <div id="cobj"></div>
+                                    
+                                </div> 
+                                <input type="button" name="next" class="next action-button" value="Next" /> 
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset> 
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Experience / Accomplishment:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 5 - 7</h2>
+                                        </div>
+                                    </div> 
+                                         
+                                    <div>
+                                        <input type="checkbox" name="check" id="check"/><label for="check">sfgdhf</label>
+                                        <label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname[]" placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Designation: *</label> <input type="text" name="edname[]" placeholder="BTech" /> 
+                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate[]" placeholder="2019" />
+                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="eedate[]" placeholder="2023" />
+                                        <label class="fieldlabels">Job Description: *</label> 
+                                        <textarea name="exp[]" cols="30" rows="10"></textarea>
+                                        <input type="button" name="enhance" class="next action-button" value="Enhance" />
+                                        <div class="cobj"></div>                                
+                                    </div>
+
+                                </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Skills:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 6 - 7</h2>
+                                        </div>
+                                    </div>
+                                    <div class="add_s_input_fields">
+                                        <label class="fieldlabels">Skill: *</label> <input type="text" name="skill[]"> 
+                                        <label class="fieldlabels" for="skillnum">Skill Level:*</label>
+                                        <select class="fieldlabels" name="skillnum[]">
+                                            <option value="novice">Novice</option>
+                                            <option value="intermediate">Intermediate</option>
+                                            <option value="expert">Expert</option>
+                                        </select>                                
+                                        <button type="button" class="add_s_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var max_fields=10
+                                            var wrapper = $(".add_s_input_fields");
+                                            var add_button = $(".add_s_input_fields_button")
+                                            var x=1;
+                                            $(add_button).click(function(e){
+                                                e.preventDefault();
+                                                if (x<max_fields){
+                                                    x++;
+
+                                                    $(wrapper).append('<div class="add_s_input_fields"><label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> <label class="fieldlabels" for="skill">Skill Level:*</label><select name="skill" id="skill"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="expert">Expert</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                }
+                                            });
+                                            $(wrapper).on("click",".remove_field",function(e){
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+                                        });
+                                    </script>
+                                </div> 
+                                <input type="button" name="next" class="next action-button" value="Next" /> 
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset> 
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Interests / Hobbies:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 7 - 7</h2>
+                                        </div>
+                                    </div> 
+                                    <div class="add_i_input_fields">
+                                        <input type="text" name="inter[]"> 
+                                        <button type="button" class="add_i_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var max_fields=10
+                                            var wrapper = $(".add_i_input_fields");
+                                            var add_button = $(".add_i_input_fields_button")
+                                            var x=1;
+                                            $(add_button).click(function(e){
+                                                e.preventDefault();
+                                                if (x<max_fields){
+                                                    x++;
+
+                                                    $(wrapper).append('<div class="add_i_input_fields"><input type="text" name="inter[]"><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                }
+                                            });
+                                            $(wrapper).on("click",".remove_field",function(e){
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+                                        });
+                                    </script>
+                                </div> 
+                                <input type="submit" name="submit" class="next action-button" value="Submit" /> 
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Finish:</h2>
+                                        </div>
+                                    </div> <br><br>
+                                    <h2 class="orange-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3"> <img src="{% static 'images/Done.png' %}" class="fit-image"> </div>
+                                    </div> 
+                                    <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-7 text-center">
+                                            <h5 class="orange-text text-center">You Have Successfully Signed Up</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-us" id="about-us">
+        <div>
+            <h2>About Us</h2> 
+            <br>
+            <p>
+            This is a free online calculator which counts the number of characters or letters in a text, useful for your tweets on Twitter, as well as a multitude of other applications.
+
+            Whether it is Snapchat, Twitter, Facebook, Yelp or just a note to co-workers or business officials, the number of actual characters matters. What you say may not be as important as how you say it. And how many characters you use.
+            </p>
+        </div>
+    </section>
+    <section class="contact-us" id="contact-us">
+        <div class="container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <h2>Contact Us</h2>
+                    <br>
+                    <form action="/contact" method="POST">
+                        {% csrf_token %}
+                        <input id="contact-name" type="text" name="name" class="field" placeholder="Your Name" >
+                        <div id="error-message">
+                            
+                        </div>
+                        <input type="text" class="field" name="email" placeholder="Your Email">
+                        <input type="text" class="field" name="phone" placeholder="Phone">
+                        <textarea placeholder="Message" name="text" class="field"></textarea>
+                        <button class="btn" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+	    </div>
+    </section>
+    <footer>
+        <div>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div> 
+            <p>Copyright ©2022 All rights reserved</p> 
+        </div>
+        <div>
+            <a href="/terms-and-conditions" target="_blank" >Terms &amp; Conditions</a>|
+            <a href="/privacy-policy" target="_blank" >Privacy Policy</a>|
+            <a href="/dmca" target="_blank" >DMCA</a>
+        </div>
+    </footer>
+    <!-- -----Java Script for Toggle Menu----- -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+  
+        function showMenu() {
+          navLinks.style.right = "0";
+        }
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

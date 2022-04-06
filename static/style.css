@@ -1,0 +1,580 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto","sans-serif";
+}
+
+/* Header */
+
+.Header{
+    min-height: 100vh;
+    min-width: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
+    url("https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1550");
+    background: center cover no-repeat fixed;
+    background-color: #464646;
+    position: relative;
+}
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav span {
+    width: 50px;
+    height: 60px;
+    float: left;
+}
+nav a h1 {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline;
+    padding: 5px 4px;
+    position: absolute;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text-box h1 {
+    font-size: 62px;
+  }
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  .hero-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+  }
+  nav .fas {
+    display: none;
+  }
+@media (max-width: 700px) {
+    .text-box h1 {
+      font-size: 20px;
+    }
+    .nav-links ul li {
+      display: block;
+    }
+    .nav-links {
+      position: absolute;
+      background: #f44336;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    nav .fas {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .nav-links ul {
+      padding: 30px;
+    }
+}
+
+
+
+
+
+
+
+/* Form */
+.Form {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #f44336;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea,
+#msform select {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #f44336;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #f44336;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #a12d25
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #f44336;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.orange-text {
+    color: #f44336;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #f44336
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #personalDetails:before {
+    font-family: FontAwesome;
+    content: "\f05a"
+}
+
+#progressbar #education:before {
+    font-family: FontAwesome;
+    content: "\f19d"
+    
+}
+
+#progressbar #languages:before {
+    font-family: FontAwesome;
+    content: "\f1ab"
+}
+
+#progressbar #careerObjective:before {
+    font-family: FontAwesome;
+    content: "\f140"
+}
+
+#progressbar #experience:before {
+    font-family: FontAwesome;
+    content: "\f559"
+}
+
+#progressbar #skills:before {
+    font-family: FontAwesome;
+    content: "\f5fc"
+}
+
+#progressbar #interests:before {
+    font-family: FontAwesome;
+    content: "\f86d"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #f44336
+}
+
+.fit-image {
+    width: 10%;
+    object-fit: cover;
+}
+
+/* ABOUT US */
+.about-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 300px 0px;
+    background-color: #a12d25;
+    font-family: montserrat;
+}
+.about-us div h2{
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+}
+.about-us div p{
+    text-align: center;
+    padding: 0px 7rem;
+    color: #fff;
+    font-size: 25px;
+    
+}
+
+/* CONTACT US */
+.contact-us {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    
+}
+#error-message{
+    font-size:0.8rem;
+    color: red;
+    margin-top:0;
+  }
+
+.container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container:after{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+    z-index: -1;
+}
+.contact-box{
+
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.left{
+	background: url("Images/bg.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 0.2rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+    z-index: -1;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color:#f44336;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn:hover{
+    background-color: green;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact-box{
+		grid-template-columns: 1fr;
+	}
+	.left{
+		height: 200px;
+	}
+}
+
+/* FOOTER */
+footer{
+    color: rgba(75, 75, 75, 0.822);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 40px;
+}
+  
+footer div:first-child{
+    margin-bottom: 40px;
+}
+footer div:nth-child(2){
+    margin-bottom: 30px;
+}
+footer div:last-child{
+    margin-bottom: 30px;
+}
+footer div a{
+    text-decoration: none;
+    color: rgba(75, 75, 75, 0.822);
+    margin:0 10px 0 10px;
+}
+footer div a:hover{
+    border-bottom: 2px solid #f44336 ;
+}
+  
+footer .social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+  
+footer .social-icons li a{
+    padding: 8px 10px;
+    color: #f44336;
+}
+footer .social-icons li a:hover{
+    background-color:  #f44336;
+    color: #fff;
+    border-radius: 15px;
+}
+
+/* ADD REMOVE */
+
+.add_e_input_fields input{
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+.add_e_input_fields input:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #f44336;
+    outline-width: 0 
+}
+.add_e_input_fields_button{
+    color:green;
+    border: 1px solid #333;
+    padding: 2px 5px;
+    color: #333;
+    border-radius: 2px;
+    background: #efefef;
+}
+.remove_field{
+    border: 1px solid #333;
+    padding: 2px 5px;
+    color: #333;
+    border-radius: 2px;
+    background: #efefef;
+}
+.remove_field i{
+    color: red;
+}
+.add_input_field{
+    margin-right: 4px;
+}

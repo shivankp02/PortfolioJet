@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>PortfolioJet</title>
+    <link rel="stylesheet" href="{% static 'temp_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgbx">
+                    <img src="image.jpg" alt="#">
+                </div>
+                <h2>{{name}}<br><span>{{prof}}</span></h2>
+            </div>
+            
+            <div class="contactInfo">
+                <h3 class="title">Contact Details</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">{{phone}}</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="text">{{email}}</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa-brands fa-github"></i></span>
+                        <span class="text">{{git}}</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span>
+                        <span class="text">{{lid}}</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">{{addr}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo Education">
+                <h3 class="title">Education</h3>
+                {% for i in Education %}
+                    <ul>
+                        <li>
+                            <h5>{{i.sdate}} - {{i.edate}}</h5>
+                            <h4>{{i.cname}}</h4>
+                            <h4>{{i.uname}}</h4>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+
+            <div class="contactInfo languages">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    {% for l in Language %}     
+                        <li>
+                            <span class="text">{{l.lang}}</span>
+                            <span class="percent">
+                                <div style="width: 76%;"></div>
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p> {{careerobj}} </p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                {% for e in Experience %}
+                    <div class="box">
+                        <div class="year_company">
+                            <h5>{{e.esdate}} - {{e.eedate}}</h5>
+                            <h5>{{e.ecname}}</h5>
+                        </div>
+                        <div class="text">
+                            <h4>{{e.edname}}</h4>
+                            <p>{{e.exp}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="about skills">
+                <h2 class="title2">Professional Skills</h2>
+                <div class="box">
+                    {% for s in skills %}
+                        <h4>{{s.skill}}</h4>
+                        <span class="percent">
+                            <div style="width: 76%;"></div>
+                        </span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">Interests & Hobbies</h2>
+                {% for i in Interest %}
+                    <ul>
+                        <li>{{i.inter}}</li>
+                    </ul>   
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
