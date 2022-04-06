@@ -8,13 +8,14 @@ def index(request):
     return render(request, 'index.html')
 
 def details(request):
+
     cname=[x for x in request.POST.getlist('cname')]
     uname=[x for x in request.POST.getlist('uname')]
     sdate=[x for x in request.POST.getlist('sdate')]
     edate=[x for x in request.POST.getlist('edate')]
 
-    lang=[x for x in request.POST.getlist('lang[]')]
-    slang=[x for x in request.POST.getlist('slang[]')]
+    lang=[x for x in request.POST.getlist('lang')]
+    slang=[x for x in request.POST.getlist('slang')]
 
     skill=[x for x in request.POST.getlist('skill')]
     skillnum=[x for x in request.POST.getlist('skillnum')]
@@ -25,7 +26,7 @@ def details(request):
     eedate=[x for x in request.POST.getlist('eedate')]
 
     inter =[x for x in request.POST.getlist('inter')]
-    print(ecname)
+
     edulist=[]
     langlist=[]
     skillist=[]
@@ -62,7 +63,7 @@ def details(request):
             'skillnum': j
         }
         skillist.append(subdict)
-    print(skillist)
+
     print("Hello data is recieved")
 
 

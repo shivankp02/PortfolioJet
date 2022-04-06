@@ -96,10 +96,10 @@
                                         </div>
                                     </div> 
                                     <div class="add_e_input_fields">
-                                        <label class="fieldlabels">Course Name: *</label> <input type="text" name="cname[]"  placeholder="BTech"/> 
-                                        <label class="fieldlabels">University Name: *</label> <input type="text" name="uname[]"  placeholder="RGPV" /> 
-                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate[]"  placeholder="2019" />
-                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="edate[]"  placeholder="2023" />
+                                        <label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech"/> 
+                                        <label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" />
+                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" />
                                         <button type="button" class="add_e_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
                                     </div>
                                     <script type="text/javascript">
@@ -137,9 +137,9 @@
                                         </div>
                                     </div> 
                                     <div class="add_l_input_fields">
-                                        <label class="fieldlabels">Language: *</label> <input type="text" name="lang[]"> 
-                                        <label class="fieldlabels" for="slang">Language Level: *</label>
-                                        <select class="fieldlabels" name="slang[]" id="lang">
+                                        <label class="fieldlabels">Language: *</label> <input type="text" name="lang"> 
+                                        <label class="fieldlabels" for="lang1">Language Level: *</label>
+                                        <select class="fieldlabels" name="slang" id="lang1">
                                             <option value="novice">Novice</option>
                                             <option value="intermediate">Intermediate</option>
                                             <option value="fluent">Fluent</option>
@@ -157,7 +157,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_l_input_fields"><label class="fieldlabels">Language: *</label> <input type="text" name="lang[]" /><label class="fieldlabels" for="slang">Language Level: *</label><select class="fieldlabels" name="slang" id="lang"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="fluent">Fluent</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_l_input_fields"><label class="fieldlabels">Language: *</label> <input type="text" name="lang" /><label class="fieldlabels" for="lang1">Language Level: *</label><select class="fieldlabels" name="slang" id="lang1"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="fluent">Fluent</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
@@ -202,11 +202,10 @@
                                     </div> 
                                          
                                     <div>
-                                        <input type="checkbox" name="check" id="check"/><label for="check">sfgdhf</label>
-                                        <label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname[]" placeholder="RGPV" /> 
-                                        <label class="fieldlabels">Designation: *</label> <input type="text" name="edname[]" placeholder="BTech" /> 
-                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate[]" placeholder="2019" />
-                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="eedate[]" placeholder="2023" />
+                                        <label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname" placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Designation: *</label> <input type="text" name="edname" placeholder="BTech" /> 
+                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" />
+                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="eedate" placeholder="2023" />
                                         <label class="fieldlabels">Job Description: *</label> 
                                         <textarea name="exp[]" cols="30" rows="10"></textarea>
                                         <input type="button" name="enhance" class="next action-button" value="Enhance" />
@@ -226,9 +225,9 @@
                                         </div>
                                     </div>
                                     <div class="add_s_input_fields">
-                                        <label class="fieldlabels">Skill: *</label> <input type="text" name="skill[]"> 
-                                        <label class="fieldlabels" for="skillnum">Skill Level:*</label>
-                                        <select class="fieldlabels" name="skillnum[]">
+                                        <label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> 
+                                        <label class="fieldlabels" for="num">Skill Level:*</label>
+                                        <select class="fieldlabels" name="skillnum" id="num">
                                             <option value="novice">Novice</option>
                                             <option value="intermediate">Intermediate</option>
                                             <option value="expert">Expert</option>
@@ -246,7 +245,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_s_input_fields"><label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> <label class="fieldlabels" for="skill">Skill Level:*</label><select name="skill" id="skill"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="expert">Expert</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_s_input_fields"><label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> <label class="fieldlabels" for="num">Skill Level:*</label><select name="skillnum" id="num"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="expert">Expert</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
@@ -271,7 +270,7 @@
                                         </div>
                                     </div> 
                                     <div class="add_i_input_fields">
-                                        <input type="text" name="inter[]"> 
+                                        <input type="text" name="inter"> 
                                         <button type="button" class="add_i_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
                                     </div>
                                     <script type="text/javascript">
@@ -285,7 +284,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_i_input_fields"><input type="text" name="inter[]"><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_i_input_fields"><input type="text" name="inter"><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
