@@ -85,16 +85,23 @@ $(document).ready(function(){
     
 });
 
-
 // Ajax calling
 $('#enhance').on('click', function () {
-    e.preventDefault();
-    obj = $("#obj").val();
+    let obj = $("#obj").val();
     $.post(
         "/enhance",
-        { obj: obj },
+        { obj: obj},
         function (response) {
-            $("#cobj").html(response["cobj"]);
-            console.log(response["cobj"]);
-    });
+            data = JSON.parse(response)
+            console.log(data)
+            $("#cobj").html(response);
+            // for (let key in data) {
+            //     console.log(key, data[key])
+            //     for (let i = 0; i < data[key].length;i++) {
+            //         console.log(data[key][i])
+            //         $("#cobj").html(data[key][i]);
+            //     }
+            // }
+        }
+    );
 })
