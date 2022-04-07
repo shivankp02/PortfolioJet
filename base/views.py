@@ -1,7 +1,12 @@
-from django.http import JsonResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Contact
-import requests
+from django.views.decorators.csrf import csrf_exempt
+import pickle
+import spacy
+from spacy.lang.en.stop_words import STOP_WORDS
+from nltk.corpus import wordnet
+import json
 
 # Create your views here.
 def index(request):
@@ -101,21 +106,35 @@ def details(request):
 def template(request):
     return render(request,"template.html")
 
+@csrf_exempt
 def enhance(request):
-    obj = request.POST.get('obj')
-    print(obj)
-    API_URL = "https://api-inference.huggingface.co/models/tuner007/pegasus_paraphrase"
-    headers = {"Authorization": "Bearer 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"}
-
-    def query(payload):
-        response = requests.post(API_URL, headers=headers, json=payload)
-        return response.json()
-
-    output = query({
-        "inputs": obj,
-        "parameters":{"min_length":10,"max_length":1000}
-    })
-    return JsonResponse({'cobj':output})
+    obj=str(request.POST.get("obj"))
+    lis=obj.split()
+    with open('D:\\typerProject\\potfolioject\\base\\mlfiles\\grammer.pkl','rb') as file:
+        data=pickle.load(file)
+    lit1=[x for x in lis if x not in data['adverb'].tolist()]
+    lit2=[x for x in lit1 if x not in data['noun'].tolist()]
+    lit3=[x for x in lit2 if x not in STOP_WORDS]
+    lit3=list(set(lit3))
+    str2=" ".join([x for x in lit3])
+    nlp=spacy.load('en_core_web_sm')
+    str2=nlp(str2)
+    l={}
+    for i in range(len(lit3)):
+        syno=[]
+        pos=str2[i].pos_
+        if pos[0].lower()=='n' or pos[0].lower()=='v' or pos[0].lower()=='a' or pos[0].lower()=='r':
+            for syn in wordnet.synsets(str2[i].text,pos=pos[0].lower()):
+                for lemas in syn.lemmas():
+                    syno.append(lemas.name())
+            if len(syno)!=0:
+                syno_set=set(syno)
+                syno=list(syno_set)
+                if len(syno)<4:
+                    l[lit3[i]]=syno
+                else:
+                    l[lit3[i]]=syno[0:5]
+    return HttpResponse(json.dumps(l))
 
 def contact(request):
     if request.method == 'POST':
