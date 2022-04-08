@@ -95,13 +95,12 @@ $('#enhance').on('click', function () {
             data = JSON.parse(response)
             console.log(data)
             $("#cobj").html(response);
-            // for (let key in data) {
-            //     console.log(key, data[key])
-            //     for (let i = 0; i < data[key].length;i++) {
-            //         console.log(data[key][i])
-            //         $("#cobj").html(data[key][i]);
-            //     }
-            // }
+            for (let key in data) {
+                console.log(key, data[key])
+                for (let i = 0; i < data[key].length;i++) {
+                    dataset="<ul><li>${}</li></ul>"
+                }
+            }
         }
     );
 })
