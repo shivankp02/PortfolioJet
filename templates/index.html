@@ -34,8 +34,8 @@
         </nav>
         <div class="text-box">
             <h1>Build Resume Fast and Confidently</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque tenetur exercitationem vero veritatis ad provident explicabo, voluptates earum voluptas, quia debitis illo similique placeat in vitae nostrum, cupiditate assumenda minima dolore? Consequatur blanditiis iste perspiciatis sapiente. Numquam quibusdam quo saepe quae aspernatur alias, dicta iste exercitationem deserunt deleniti fuga accusamus!
+            <p style="font-size: 20px;">This platform will help you build a professional resume. <br> 
+                All you have to do is fill your details according to the form on our platform.
             </p>
             <a
               href="#Form"
@@ -113,7 +113,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_e_input_fields"><label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech" /><label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" /><a href="#" class="add_e_input_fields_button"><i class="fa-solid fa-circle-plus"></i></a> <a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_e_input_fields"><label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech" /><label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" /><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
 
@@ -167,7 +167,7 @@
                                                 x--;
                                             });
                                         });
-                                    </script>                                
+                                    </script>
                                 </div> 
                                 <input type="button" name="next" class="next action-button" value="Next" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -202,7 +202,7 @@
                                         </div>
                                     </div> 
                                          
-                                    <div>
+                                    <div class="add_exp_input_fields">
                                         <label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname" placeholder="RGPV" /> 
                                         <label class="fieldlabels">Designation: *</label> <input type="text" name="edname" placeholder="BTech" /> 
                                         <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" />
@@ -210,7 +210,29 @@
                                         <label class="fieldlabels">Job Description: *</label> 
                                         <textarea name="exp" cols="30" rows="10"></textarea>
                                         <div class="cobj"></div>                                
-                                    </div> 
+                                        <button type="button" class="add_exp_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var max_fields=10
+                                            var wrapper = $(".add_exp_input_fields");
+                                            var add_button = $(".add_exp_input_fields_button")
+                                            var x=1;
+                                            $(add_button).click(function(e){
+                                                e.preventDefault();
+                                                if (x<max_fields){
+                                                    x++;
+
+                                                    $(wrapper).append('<div class="add_exp_input_fields"><label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname" placeholder="RGPV" /><label class="fieldlabels">Designation: *</label> <input type="text" name="edname" placeholder="BTech" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="eedate" placeholder="2023" /><label class="fieldlabels">Job Description: *</label><textarea name="exp" cols="30" rows="10"></textarea><div class="cobj"></div><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                }
+                                            });
+                                            $(wrapper).on("click",".remove_field",function(e){
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+                                        });
+                                    </script>
                                 </div> 
                                 <button type="button" id="enhance">Enhance</button>
                                 <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
