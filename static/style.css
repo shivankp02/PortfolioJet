@@ -361,6 +361,13 @@ p {
     object-fit: cover;
 }
 
+#cobj{
+    display:flex;
+    justify-content: space-between;
+}
+#cobj ul li{
+    list-style-type: none;
+}
 /* ABOUT US */
 .about-us{
     display: flex;
