@@ -10,8 +10,10 @@
     min-height: 100vh;
     min-width: 100vh;
     background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
-    url("https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1550");
-    background: center cover no-repeat fixed;
+    url("https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=1");
+    background-size: 100%;
+    background: center cover fixed;
+    background-repeat: no-repeat;
     background-color: #464646;
     position: relative;
 }
@@ -98,40 +100,6 @@ nav a h1 {
   nav .fas {
     display: none;
   }
-@media (max-width: 700px) {
-    .text-box h1 {
-      font-size: 20px;
-    }
-    .nav-links ul li {
-      display: block;
-    }
-    .nav-links {
-      position: absolute;
-      background: #f44336;
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -200px;
-      text-align: left;
-      z-index: 2;
-      transition: 1s;
-    }
-    nav .fas {
-      display: block;
-      color: #fff;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-    .nav-links ul {
-      padding: 30px;
-    }
-}
-
-
-
-
-
 
 
 /* Form */
@@ -400,12 +368,17 @@ p {
     align-items: center;
     
 }
-#error-message{
+.contact-form{
+    margin-bottom: 22px;
+    width: 100%;
+}
+small{
     font-size:0.8rem;
     color: red;
-    margin-top:0;
   }
-
+.error input{
+    border-color: red;
+}
 .container{
 	position: relative;
 	width: 100%;
@@ -454,7 +427,6 @@ p {
 	background-color: rgba(230, 230, 230, 0.6);
 	padding: 0.5rem 0.2rem;
 	font-size: 1.1rem;
-	margin-bottom: 22px;
 	transition: .3s;
     z-index: -1;
 }
@@ -464,6 +436,7 @@ p {
 }
 
 textarea{
+    margin-top: 20px;
 	min-height: 150px;
 }
 

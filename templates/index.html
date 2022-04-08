@@ -343,13 +343,24 @@
                     <br>
                     <form action="/contact" method="POST">
                         {% csrf_token %}
-                        <input id="contact-name" type="text" name="name" class="field" placeholder="Your Name" >
-                        <div id="error-message">
-                            
+                        <div class="contact-form">
+                            <input id="contact-name" type="text" name="name" class="field" placeholder="Your Name">
+                            <small></small>
                         </div>
-                        <input type="text" class="field" name="email" placeholder="Your Email">
-                        <input type="text" class="field" name="phone" placeholder="Phone">
-                        <textarea placeholder="Message" name="text" class="field"></textarea>
+                        <div class="contact-form">
+                            <input id="contact-email" type="text" class="field" name="email" placeholder="Your Email">
+                            <small></small>
+                        </div>
+                        <div class="contant-form">
+                            <input id="contact-phone" type="text" class="field" name="phone" placeholder="Phone">
+                            <small></small>
+                        </div>
+                        <div class="contact-form">
+                            <textarea id="contact-message" placeholder="Message" name="text" class="field"></textarea>
+                            <small>
+
+                            </small>
+                        </div>
                         <button class="btn" type="submit">Send</button>
                     </form>
                 </div>
