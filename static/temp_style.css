@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Poppins", sans-serif;
 }
 body {
@@ -14,6 +13,12 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+.resume {
+  font-size: 20px;
+  text-decoration: none;
+  color: #081921;
+}
+
 .container {
   position: relative;
   width: 100%;

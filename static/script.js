@@ -108,3 +108,26 @@ $('#enhance').on('click', function () {
         }
     );
 })
+
+$('#enhance').on('click', function () {
+    let obj = $("#expr").val();
+    $.post(
+        "/enhance",
+        { obj: obj},
+        function (response) {
+            data = JSON.parse(response)
+            console.log(data)
+            // $("#cobj").html(response);
+            var dataset = ``;
+            for (let key in data) {
+                console.log(key)
+                dataset += `<ul><li><b>${key}</b></li>`;
+                for (let i = 0; i < data[key].length;i++) {
+                    dataset += `<li>${data[key][i]}</li>`
+                }
+                dataset += `</ul>`
+            }
+            $("#cobj").html(dataset);
+        }
+    );
+})

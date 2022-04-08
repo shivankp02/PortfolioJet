@@ -378,7 +378,7 @@ p {
     display:flex;
     justify-content: space-between;
     border: #000000;
-    border-style:dashed;
+    background-color: #ECEFF1  ;
 }
 #cobj ul li{
     list-style-type: none;
