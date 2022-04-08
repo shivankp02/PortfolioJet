@@ -29,6 +29,7 @@ def details(request):
     edname=[x for x in request.POST.getlist('edname')]
     esdate=[x for x in request.POST.getlist('esdate')]
     eedate=[x for x in request.POST.getlist('eedate')]
+    exp=[x for x in request.POST.getlist('exp')]
 
     inter =[x for x in request.POST.getlist('inter')]
 
@@ -46,12 +47,13 @@ def details(request):
         }
         edulist.append(subdict)
 
-    for i,j,k,p in zip(ecname, edname, esdate, eedate):
+    for i,j,k,p,q in zip(ecname, edname, esdate, eedate, exp):
         subdict={
             'ecname': i,
             'edname': j,
             'esdate': k,
-            'eedate': p
+            'eedate': p,
+            'exp': q
         }
         explist.append(subdict)
 
@@ -68,8 +70,6 @@ def details(request):
             'skillnum': j
         }
         skillist.append(subdict)
-
-    print("Hello data is recieved")
 
 
     for i in inter:
@@ -110,7 +110,7 @@ def template(request):
 def enhance(request):
     obj=str(request.POST.get("obj"))
     lis=obj.split()
-    with open('D:\\typerProject\\potfolioject\\base\\mlfiles\\grammer.pkl','rb') as file:
+    with open('D:\\Projects\\word_recommendation\\potfolioject\\base\\mlfiles\\grammer.pkl','rb') as file:
         data=pickle.load(file)
     lit1=[x for x in lis if x not in data['adverb'].tolist()]
     lit2=[x for x in lit1 if x not in data['noun'].tolist()]

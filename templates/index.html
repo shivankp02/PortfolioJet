@@ -140,6 +140,7 @@
                                         <label class="fieldlabels">Language: *</label> <input type="text" name="lang"> 
                                         <label class="fieldlabels" for="lang1">Language Level: *</label>
                                         <select class="fieldlabels" name="slang" id="lang1">
+                                            <option >Select</option>
                                             <option value="novice">Novice</option>
                                             <option value="intermediate">Intermediate</option>
                                             <option value="fluent">Fluent</option>
@@ -183,10 +184,10 @@
                                     </div> 
                                     <label class="fieldlabels"></label> 
                                     <textarea id="obj" name="careerobj" cols="30" rows="10"></textarea>
-                                    <button type="button" id="enhance">enhance</button>
                                     <div id="cobj"></div>
                                     
                                 </div> 
+                                <button type="button" id="enhance">Enhance</button>
                                 <input type="button" name="next" class="next action-button" value="Next" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset> 
@@ -207,12 +208,12 @@
                                         <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" />
                                         <label class="fieldlabels">End Date: *</label> <input type="date" name="eedate" placeholder="2023" />
                                         <label class="fieldlabels">Job Description: *</label> 
-                                        <textarea name="exp[]" cols="30" rows="10"></textarea>
-                                        <input type="button" name="enhance" class="next action-button" value="Enhance" />
+                                        <textarea name="exp" cols="30" rows="10"></textarea>
                                         <div class="cobj"></div>                                
-                                    </div>
-
-                                </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                    </div> 
+                                </div> 
+                                <button type="button" id="enhance">Enhance</button>
+                                <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -228,6 +229,7 @@
                                         <label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> 
                                         <label class="fieldlabels" for="num">Skill Level:*</label>
                                         <select class="fieldlabels" name="skillnum" id="num">
+                                            <option >Select</option>
                                             <option value="novice">Novice</option>
                                             <option value="intermediate">Intermediate</option>
                                             <option value="expert">Expert</option>

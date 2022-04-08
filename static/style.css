@@ -174,6 +174,19 @@ p {
     text-align: left
 }
 
+#enhance {
+    width: 100px;
+    background: #f44336;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
 #msform fieldset:not(:first-of-type) {
     display: none
 }
@@ -364,6 +377,8 @@ p {
 #cobj{
     display:flex;
     justify-content: space-between;
+    border: #000000;
+    border-style:dashed;
 }
 #cobj ul li{
     list-style-type: none;
