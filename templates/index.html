@@ -51,7 +51,7 @@
                     <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                         <h2 id="heading">Start building your Resume</h2>
                         <p>Fill all mandatory fields to go to next step</p>
-                        <form id="msform" method="POST" action="/details" enctype="multipart/form-data">
+                        <form id="msform" method="POST" action="/Resume" enctype="multipart/form-data">
                             <!-- progressbar -->
                             {% csrf_token %}
                             <ul id="progressbar">
@@ -75,14 +75,14 @@
                                             <h2 class="steps">Step 1 - 7</h2>
                                         </div>
                                     </div> 
-                                        <label class="fieldlabels">Full Name: *</label> <input type="text" name="name" placeholder="John Wick" /> 
-                                        <label class="fieldlabels">Profession: *</label> <input type="text" name="prof" placeholder="Student" /> 
-                                        <label class="fieldlabels">Phone Number: *</label> <input type="tel" name="phone" placeholder="+91 7894561230" /> 
-                                        <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="johnwick@gmail.com" />
+                                        <label class="fieldlabels">Full Name: </label> <input type="text" name="name" placeholder="John Wick" /> 
+                                        <label class="fieldlabels">Profession: </label> <input type="text" name="prof" placeholder="Student" /> 
+                                        <label class="fieldlabels">Phone Number: </label> <input type="tel" name="phone" placeholder="+91 7894561230" /> 
+                                        <label class="fieldlabels">Email: </label> <input type="email" name="email" placeholder="johnwick@gmail.com" />
                                         <label class="fieldlabels">Github: </label> <input type="text" name="git" placeholder="github.com/johnwick" />
                                         <label class="fieldlabels">LinkedIn: </label> <input type="text" name="lid" placeholder="linkedin.com/in/johnwick" />
-                                        <label class="fieldlabels">Address: *</label> <input type="text" name="addr" placeholder="Bihar, India" />
-                                        <label class="fieldlabels">Upload Your Photo: *</label> <input type="file" name="pic" accept="image/*"> <label>
+                                        <label class="fieldlabels">Address: </label> <input type="text" name="addr" placeholder="Bihar, India" />
+                                        <label class="fieldlabels">Upload Your Photo: </label> <input type="file" name="pic" accept="image/"> <label>
                                 </div> <input type="button" name="next" class="next action-button" value="Next" />
                             </fieldset>
                             <fieldset>
@@ -96,10 +96,10 @@
                                         </div>
                                     </div> 
                                     <div class="add_e_input_fields">
-                                        <label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech"/> 
-                                        <label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /> 
-                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" />
-                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" />
+                                        <label class="fieldlabels">Course Name: </label> <input type="text" name="cname"  placeholder="BTech"/> 
+                                        <label class="fieldlabels">University Name: </label> <input type="text" name="uname"  placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Start Date: </label> <input type="date" name="sdate"  placeholder="2019" />
+                                        <label class="fieldlabels">End Date: </label> <input type="date" name="edate"  placeholder="2023" />
                                         <button type="button" class="add_e_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
                                     </div>
                                     <script type="text/javascript">
@@ -113,7 +113,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_e_input_fields"><label class="fieldlabels">Course Name: *</label> <input type="text" name="cname"  placeholder="BTech" /><label class="fieldlabels">University Name: *</label> <input type="text" name="uname"  placeholder="RGPV" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="sdate"  placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="edate"  placeholder="2023" /><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_e_input_fields"><label class="fieldlabels">Course Name: </label> <input type="text" name="cname"  placeholder="BTech" /><label class="fieldlabels">University Name: </label> <input type="text" name="uname"  placeholder="RGPV" /><label class="fieldlabels">Start Date: </label> <input type="date" name="sdate"  placeholder="2019" /><label class="fieldlabels">End Date: </label> <input type="date" name="edate"  placeholder="2023" /><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
 
@@ -137,8 +137,8 @@
                                         </div>
                                     </div> 
                                     <div class="add_l_input_fields">
-                                        <label class="fieldlabels">Language: *</label> <input type="text" name="lang"> 
-                                        <label class="fieldlabels" for="lang1">Language Level: *</label>
+                                        <label class="fieldlabels">Language: </label> <input type="text" name="lang"> 
+                                        <label class="fieldlabels" for="lang1">Language Level: </label>
                                         <select class="fieldlabels" name="slang" id="lang1">
                                             <option >Select</option>
                                             <option value="novice">Novice</option>
@@ -158,7 +158,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_l_input_fields"><label class="fieldlabels">Language: *</label> <input type="text" name="lang" /><label class="fieldlabels" for="lang1">Language Level: *</label><select class="fieldlabels" name="slang" id="lang1"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="fluent">Fluent</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_l_input_fields"><label class="fieldlabels">Language: </label> <input type="text" name="lang" /><label class="fieldlabels" for="lang1">Language Level: </label><select class="fieldlabels" name="slang" id="lang1"><option >Select</option><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="fluent">Fluent</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
@@ -187,7 +187,7 @@
                                     <div id="cobj"></div>
                                     
                                 </div> 
-                                <button type="button" id="enhance">Enhance</button>
+                                <button type="button" id="enhance">Recommend</button>
                                 <input type="button" name="next" class="next action-button" value="Next" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset> 
@@ -203,11 +203,11 @@
                                     </div> 
                                          
                                     <div class="add_exp_input_fields">
-                                        <label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname" placeholder="RGPV" /> 
-                                        <label class="fieldlabels">Designation: *</label> <input type="text" name="edname" placeholder="BTech" /> 
-                                        <label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" />
-                                        <label class="fieldlabels">End Date: *</label> <input type="date" name="eedate" placeholder="2023" />
-                                        <label class="fieldlabels">Job Description: *</label> 
+                                        <label class="fieldlabels">Company Name: </label> <input type="text" name="ecname" placeholder="RGPV" /> 
+                                        <label class="fieldlabels">Designation: </label> <input type="text" name="edname" placeholder="BTech" /> 
+                                        <label class="fieldlabels">Start Date: </label> <input type="date" name="esdate" placeholder="2019" />
+                                        <label class="fieldlabels">End Date: </label> <input type="date" name="eedate" placeholder="2023" />
+                                        <label class="fieldlabels">Job Description: </label> 
                                         <textarea name="exp" id="expr" cols="30" rows="10"></textarea>
                                         <div class="cobj"></div>                             
                                         <button type="button" class="add_exp_input_fields_button"><i class="fa-solid fa-circle-plus"></i></button>
@@ -223,7 +223,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_exp_input_fields"><label class="fieldlabels">Company Name: *</label> <input type="text" name="ecname" placeholder="RGPV" /><label class="fieldlabels">Designation: *</label> <input type="text" name="edname" placeholder="BTech" /><label class="fieldlabels">Start Date: *</label> <input type="date" name="esdate" placeholder="2019" /><label class="fieldlabels">End Date: *</label> <input type="date" name="eedate" placeholder="2023" /><label class="fieldlabels">Job Description: *</label><textarea name="exp" cols="30" rows="10"></textarea><div class="cobj"></div><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_exp_input_fields"><label class="fieldlabels">Company Name: </label> <input type="text" name="ecname" placeholder="RGPV" /><label class="fieldlabels">Designation: </label> <input type="text" name="edname" placeholder="BTech" /><label class="fieldlabels">Start Date: </label> <input type="date" name="esdate" placeholder="2019" /><label class="fieldlabels">End Date: </label> <input type="date" name="eedate" placeholder="2023" /><label class="fieldlabels">Job Description: </label><textarea name="exp" cols="30" rows="10"></textarea><div class="cobj"></div><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
@@ -234,7 +234,7 @@
                                         });
                                     </script>
                                 </div> 
-                                <button type="button" id="enhance">Enhance</button>
+                                <!-- <button type="button" id="enhance">Recommend</button> -->
                                 <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                             <fieldset>
@@ -248,8 +248,8 @@
                                         </div>
                                     </div>
                                     <div class="add_s_input_fields">
-                                        <label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> 
-                                        <label class="fieldlabels" for="num">Skill Level:*</label>
+                                        <label class="fieldlabels">Skill: </label> <input type="text" name="skill"> 
+                                        <label class="fieldlabels" for="num">Skill Level:</label>
                                         <select class="fieldlabels" name="skillnum" id="num">
                                             <option >Select</option>
                                             <option value="novice">Novice</option>
@@ -269,7 +269,7 @@
                                                 if (x<max_fields){
                                                     x++;
 
-                                                    $(wrapper).append('<div class="add_s_input_fields"><label class="fieldlabels">Skill: *</label> <input type="text" name="skill"> <label class="fieldlabels" for="num">Skill Level:*</label><select name="skillnum" id="num"><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="expert">Expert</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
+                                                    $(wrapper).append('<div class="add_s_input_fields"><label class="fieldlabels">Skill: </label> <input type="text" name="skill"> <label class="fieldlabels" for="num">Skill Level:</label><select name="skillnum" id="num"><option >Select</option><option value="novice">Novice</option><option value="intermediate">Intermediate</option><option value="expert">Expert</option></select><a href="#" class="remove_field"><i class="fa-solid fa-circle-minus"></i></a></div>');
                                                 }
                                             });
                                             $(wrapper).on("click",".remove_field",function(e){
@@ -351,10 +351,13 @@
         <div>
             <h2>About Us</h2> 
             <br>
-            <p>
-            This is a free online calculator which counts the number of characters or letters in a text, useful for your tweets on Twitter, as well as a multitude of other applications.
+            <p id="about">
+                It's 21st century and nobody gets anything thing for free. 
+                To get anything we need money and to get money one can start a business or look for a job. 
+                For the second option the first step is to build a professional resume but not everyone has the vocabulary and experience to build a resume. 
+                This is where our platform will help you build a professional resume using machine learning and natural language processing. 
+                All you have to do is fill your details according to the form on our platform.
 
-            Whether it is Snapchat, Twitter, Facebook, Yelp or just a note to co-workers or business officials, the number of actual characters matters. What you say may not be as important as how you say it. And how many characters you use.
             </p>
         </div>
     </section>
@@ -367,14 +370,23 @@
                     <br>
                     <form action="/contact" method="POST">
                         {% csrf_token %}
-                        <input id="contact-name" type="text" name="name" class="field" placeholder="Your Name" >
-                        <div id="error-message">
-                            
-                        </div>
-                        <input type="text" class="field" name="email" placeholder="Your Email">
-                        <input type="text" class="field" name="phone" placeholder="Phone">
-                        <textarea placeholder="Message" name="text" class="field"></textarea>
-                        <button class="btn" type="submit">Send</button>
+                            <div class="contact-form">
+                                <input id="contact-name" type="text" name="name" class="field" placeholder="Your Name">
+                                <small></small>
+                            </div>
+                            <div class="contact-form">
+                                <input id="contact-email" type="text" class="field" name="email" placeholder="Your Email">
+                                <small></small>
+                            </div>
+                            <div class="contant-form">
+                                <input id="contact-phone" type="text" class="field" name="phone" placeholder="Phone">
+                                <small></small>
+                            </div>
+                            <div class="contact-form">
+                                <textarea id="contact-message" placeholder="Message" name="text" class="field"></textarea>
+                                <small></small>
+                            </div>
+                            <button class="btn" type="submit">Send</button>
                     </form>
                 </div>
             </div>

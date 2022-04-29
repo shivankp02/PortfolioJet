@@ -7,6 +7,8 @@ import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import wordnet
 import json
+from potfolioject.settings import BASE_DIR
+import os
 
 # Create your views here.
 def index(request):
@@ -108,9 +110,9 @@ def template(request):
 
 @csrf_exempt
 def enhance(request):
-    obj=str(request.POST.get("obj"))
+    obj=str(request.POST.get("  obj"))
     lis=obj.split()
-    with open('D:\\Projects\\word_recommendation\\potfolioject\\base\\mlfiles\\grammer.pkl','rb') as file:
+    with open(os.path.join(BASE_DIR,'base\\mlfiles\\grammer.pkl'),'rb') as file:
         data=pickle.load(file)
     lit1=[x for x in lis if x not in data['adverb'].tolist()]
     lit2=[x for x in lit1 if x not in data['noun'].tolist()]

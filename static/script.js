@@ -72,17 +72,65 @@ $(document).ready(function(){
     $(".submit").click(function(){
     return false;
     })
-    $("#error-message").hide()
-    $("#contact-name").keyup(function () {
-        let name = $("#contact-name").val();
-                if (name=="") {
-                    $("#error-message").show().html("This field is required.")
-                    $("#contact-name").css({"border-color":"red","margin-bottom":"0"})
-                } 
-            });
-    
 
+    const setError = (input, message)=>{
+        const parent=input.parentElement;
+        const child = parent.querySelector('small');
+        //add error message inside small 
+        child.style.display = "block";
+        child.innerHTML = message;
+        //add error class
+        parent.className = 'contact-form error';
+    }
+    const setSuccess = (input) => {
+        const parent = input.parentElement;
+        const child = parent.querySelector("small");
+        child.style.display = "none";
+    }
+
+    $("#contact-name").keyup(function () {
+        let name = document.getElementById('contact-name');
+        if (name.value === "") {
+            setError(name, "This field is required");
+        }else {
+            setSuccess(name);
+        }
+    });
+    $("#contact-email").keyup(function(){
+        let email = document.getElementById('contact-email');
+        if (email.value === "") {
+            setError(email, "This field is required");
+        }
+        else if (!email.value.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) {
+            setError(email, "This Email is not valid");
+        }
+        else{
+            setSuccess(email);
+        }
+    });
     
+    $("#contact-phone").keyup(function () {
+        let phone = document.getElementById('contact-phone');
+        if (phone.value === "") {
+            setError(phone, "This field is required");
+        }
+        else if (phone.value.length!=10) {
+            setError(phone, "This Number is not valid");
+        }
+        else {
+            setSuccess(phone);
+        }
+    });
+
+    $("#contact-message").keyup(function () {
+        let message = document.getElementById('contact-message');
+        if (message.value === "") {
+            setError(message, "This field is required");
+        }else {
+            setSuccess(message);
+        }
+    });
+
 });
 
 // Ajax calling
